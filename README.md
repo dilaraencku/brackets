@@ -11,3 +11,9 @@ go get
 # Start The project
 
 go run main/main.go
+
+
+# Run test
+
+cd test
+go test
