@@ -7,35 +7,33 @@ import (
 
 func IsBalanced(myString string) string {
 
-	acilisParantezleri := []string{"[", "(", "{"}
-	kapanisParantezleri := []string{"]", ")", "}"}
-
-	fmt.Println("myString :", myString)
+	openingBrackets := []string{"[", "(", "{"}
+	closingBrackets := []string{"]", ")", "}"}
 
 	var controlArray []string
-	var kapanisParanteziSayaci int
+	var closingBracketsFlag int
 
 	for i := 0; i <= len(myString)-1; i++ {
 
-		responseForAcilisParantezleri, _ := isCharExist(acilisParantezleri, string(myString[i]))
-		responseForKapanisParantezleri, _ := isCharExist(kapanisParantezleri, string(myString[i]))
+		responseForOpeningBrackets, _ := isCharExist(openingBrackets, string(myString[i]))
+		responseForClosingBrackets, _ := isCharExist(closingBrackets, string(myString[i]))
 
 
-		if responseForAcilisParantezleri == true {
+		if responseForOpeningBrackets == true {
 
-			kapanisParanteziSayaci = 0
+			closingBracketsFlag = 0
 
 			controlArray = append(controlArray, string(myString[i]))
 
-		} else if responseForKapanisParantezleri == true {
+		} else if responseForClosingBrackets == true {
 
-			kapanisParanteziSayaci++
+			closingBracketsFlag++
 
 			myChar := string(myString[i])
 
 			if myChar == ")" {
 
-				if controlArray[len(controlArray)-kapanisParanteziSayaci] == "(" {
+				if controlArray[len(controlArray)-closingBracketsFlag] == "(" {
 
 				} else {
 
@@ -46,7 +44,7 @@ func IsBalanced(myString string) string {
 
 			} else if myChar == "}" {
 
-				if controlArray[len(controlArray)-kapanisParanteziSayaci] == "{" {
+				if controlArray[len(controlArray)-closingBracketsFlag] == "{" {
 
 				} else {
 
@@ -57,7 +55,7 @@ func IsBalanced(myString string) string {
 
 			} else if myChar == "]" {
 
-				if controlArray[len(controlArray)-kapanisParanteziSayaci] == "[" {
+				if controlArray[len(controlArray)-closingBracketsFlag] == "[" {
 
 				} else {
 
@@ -69,7 +67,10 @@ func IsBalanced(myString string) string {
 			}
 
 		} else {
-			return ("PLEASE ENTER VALID STRING, EXPECTED STRING SHOULD CONTAINS ONLY (,[,{,),},] characters")
+
+			fmt.Println("PLEASE ENTER VALID STRING, EXPECTED STRING SHOULD CONTAINS ONLY (,[,{,),},] characters")
+
+			return "INVALID STRING"
 		}
 
 	}
