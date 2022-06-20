@@ -25,7 +25,7 @@ func TestBracketsSymmetryControlReturnNo(t *testing.T) {
 func TestBracketsSymmetryControlInvalidParam(t *testing.T) {
 	response := TGACase.IsBalanced("(y)[]")
 
-	if response == "INVALID STRING" {
+	if response != "YES" || response != "NO" {
 		t.Error("INVALID STRING")
 	}
 }
