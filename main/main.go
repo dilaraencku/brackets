@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"TGACase"
@@ -12,13 +12,23 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 
-
-	fmt.Print("Merhaba, lütfen kontrol edilmesini istediğiniz parantez kümesini giriniz : ")
-	text, _ := reader.ReadString('\n')
-
-	text = strings.Replace(text, "\n", "", -1)
+	var cevap string
 
 
-	TGACase.BracketsSymmetry("((})")
+	for cevap != "E"  || cevap !=  "e" {
+
+		fmt.Print("Enter text : ")
+		text, _ := reader.ReadString('\n')
+
+		text = strings.Replace(text, "\n", "", -1)
+		TGACase.IsBalanced(text)
+
+		fmt.Print("if you want to exit press E, if you don't want any key is enough ")
+		cevap, _ = reader.ReadString('\n')
+
+	}
+
+
+
 
 }

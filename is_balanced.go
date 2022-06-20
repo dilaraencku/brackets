@@ -5,7 +5,7 @@ import (
 	"reflect"
 )
 
-func isBalanced(myString string) string {
+func IsBalanced(myString string) string {
 
 	acilisParantezleri := []string{"[", "(", "{"}
 	kapanisParantezleri := []string{"]", ")", "}"}
@@ -18,6 +18,8 @@ func isBalanced(myString string) string {
 	for i := 0; i <= len(myString)-1; i++ {
 
 		responseForAcilisParantezleri, _ := isCharExist(acilisParantezleri, string(myString[i]))
+		responseForKapanisParantezleri, _ := isCharExist(kapanisParantezleri, string(myString[i]))
+
 
 		if responseForAcilisParantezleri == true {
 
@@ -25,11 +27,7 @@ func isBalanced(myString string) string {
 
 			controlArray = append(controlArray, string(myString[i]))
 
-		}
-
-		responseForKapanisParantezleri, _ := isCharExist(kapanisParantezleri, string(myString[i]))
-
-		if responseForKapanisParantezleri == true {
+		} else if responseForKapanisParantezleri == true {
 
 			kapanisParanteziSayaci++
 
@@ -70,6 +68,8 @@ func isBalanced(myString string) string {
 
 			}
 
+		} else {
+			return ("PLEASE ENTER VALID STRING, EXPECTED STRING SHOULD CONTAINS ONLY (,[,{,),},] characters")
 		}
 
 	}
