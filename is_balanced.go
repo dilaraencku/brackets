@@ -65,9 +65,8 @@ func IsBalanced(myString string) string {
 
 		} else {
 
-			fmt.Println("PLEASE ENTER VALID STRING, EXPECTED STRING SHOULD CONTAINS ONLY (,[,{,),},] characters")
-
-			return "INVALID STRING"
+			fmt.Println("sdadsadsa")
+			return "NO"
 		}
 
 	}
