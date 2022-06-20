@@ -5,7 +5,7 @@ import (
 	"reflect"
 )
 
-func BracketsSymmetry(myString string) string {
+func isBalanced(myString string) string {
 
 	acilisParantezleri := []string{"[", "(", "{"}
 	kapanisParantezleri := []string{"]", ")", "}"}
@@ -24,7 +24,6 @@ func BracketsSymmetry(myString string) string {
 			kapanisParanteziSayaci = 0
 
 			controlArray = append(controlArray, string(myString[i]))
-			fmt.Println(i, ". karakter bir açılış parantezidir :)")
 
 		}
 
