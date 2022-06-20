@@ -37,6 +37,7 @@ func IsBalanced(myString string) string {
 
 				} else {
 
+					fmt.Println("NO")
 					return "NO"
 
 				}
@@ -47,6 +48,7 @@ func IsBalanced(myString string) string {
 
 				} else {
 
+					fmt.Println("NO")
 					return "NO"
 
 				}
@@ -57,6 +59,7 @@ func IsBalanced(myString string) string {
 
 				} else {
 
+					fmt.Println("NO")
 					return "NO"
 
 				}
@@ -65,12 +68,13 @@ func IsBalanced(myString string) string {
 
 		} else {
 
-			fmt.Println("sdadsadsa")
+			fmt.Println("NO")
 			return "NO"
 		}
 
 	}
 
+	fmt.Println("YES")
 	return "YES"
 
 }
