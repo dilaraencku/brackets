@@ -12,6 +12,12 @@ go get
 
 go run main/main.go
 
+This project requires entering a text consisting of parentheses. and then checks the symmetry of the parentheses.
+
+Returns true if the text entered by the user is symmetrical, if it is not symmetrical return false.
+
+Asks for new text after every return.
+
 
 # Run test
 
