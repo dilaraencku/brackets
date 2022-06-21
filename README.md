@@ -3,7 +3,7 @@
 This project requires Golang v1.17+ to run.
 
 
-This project requires entering a text consisting of parentheses. and then checks the symmetry of the parentheses.
+This project requires entering a text consisting of parentheses and then checks the symmetry of the parentheses.
 
 Returns YES if the text entered by the user is symmetrical, if it is not symmetrical return NO.
 
