@@ -23,16 +23,22 @@ func IsBalanced(myString string) string {
 
 		if responseForOpeningBrackets == true {
 
-			closingBracketsFlag = 0
-			openingBracketsFlag ++
+			if openingBracketsFlag == closingBracketsFlag {
+				openingBracketsFlag = 0
+				closingBracketsFlag = 0
+			} else {
+				closingBracketsFlag = 0
 
+			}
+
+			openingBracketsFlag ++
 
 			controlArray = append(controlArray, string(myString[i]))
 
 		} else if responseForClosingBrackets == true {
 
-		
 			closingBracketsFlag++
+
 
 			myChar := string(myString[i])
 
@@ -78,9 +84,10 @@ func IsBalanced(myString string) string {
 		}
 
 	}
-	
+
 	if openingBracketsFlag != closingBracketsFlag {
-		fmt.Println("NO")
+		fmt.Println( "NO")
+
 		return "NO"
 	}
 
