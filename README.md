@@ -9,9 +9,10 @@ Returns YES if the text entered by the user is symmetrical, if it is not symmetr
 
 Asks for new text after every return.
 
-Install the dependencies
+# Install the dependencies
 
 cd main
+
 go get
 
 
